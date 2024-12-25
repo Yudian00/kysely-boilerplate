@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "target": "es2022",
+      "module": "node16",
+      "lib": ["ES2022"],
+      "strict": true,
+      "skipLibCheck": true,
+      "moduleResolution": "node16",
+      "rootDir": ".",
+      "resolveJsonModule": true,
+      "outDir": "./build",
+      "allowSyntheticDefaultImports": true,
+      "importHelpers": true,
+      "alwaysStrict": true,
+      "sourceMap": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitAny": false,
+      "noImplicitThis": false,
+      "strictNullChecks": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true
+    },
+    "include": ["src/**/*", "src/**/**/**/*.json", "__tests__/**/*", ],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+  }
+  

@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Coverage
+coverage
+
+# Transpiled files
+build/
+
+# VS Code
+.vscode
+!.vscode/tasks.js
+
+# JetBrains IDEs
+.idea/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Misc
+.DS_Store
+
+# Creds
+# credentials
+
+# other
+*-lock.*
+.env
+.env.local
+*.txt
+*.zip
+*.sql
+
+
+#sonar
+.scannerwork
+sonarcube.md
+
+src/app/module/fcm
+assets
