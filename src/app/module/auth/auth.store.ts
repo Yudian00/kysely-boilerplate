@@ -13,12 +13,11 @@ export class AuthRepository {
     }
 
     async login(data: IAuthLogin) {
-        console.log("data", data)
         const result = await this.db
             .selectFrom('user')
             .selectAll()
             .where('user.username', '=', data.username)
-            .executeTakeFirstOrThrow();
+            .executeTakeFirst();
 
         if (!result) {
             throw new HttpRequestError(StatusCodes.UNAUTHORIZED, 'Username atau password salah', 'Unauthorized');
