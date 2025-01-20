@@ -11,7 +11,7 @@ export class UserRepository {
         const result = await this.db
             .selectFrom('user')
             .selectAll()
-            .where('user.id', 'is', id)
+            .where('user.id', '=', id)
             .where('user.deletedAt', 'is', null)
             .executeTakeFirstOrThrow();
 

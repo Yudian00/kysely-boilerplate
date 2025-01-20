@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { StatusCodes } from "http-status-codes";
 import { jwtDecode } from "jwt-decode";
-import { errorResponse } from "../../../helper/response";
+import { errorResponse, successResponse } from "../../../helper/response";
 import { verifyAdminJWTToken } from "../../middleware/validation.middleware";
 import { IUser } from "../auth/auth.interface";
 import { UserUsecase } from "./user.usecase";
@@ -33,7 +33,7 @@ export class UserRouter {
             }
 
             const result = await this.userUseCase.findById(user.id);
-            return res.status(StatusCodes.OK).json(result);
+            return successResponse(res, result, 'Berhasil mendapatkan data');
         } catch (error) {
             return next(error)
         }
