@@ -9,34 +9,30 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
 
-export interface Employee {
-  address: string;
+export interface AuditError {
   createdAt: Generated<Date>;
   deletedAt: Date | null;
-  departmentName: string;
-  domicile: string;
-  email: string;
-  emergencyNumber: string;
-  employeeStatus: "KONTRAK" | "MAGANG" | "TETAP";
-  gender: "LAKI-LAKI" | "PEREMPUAN";
+  endpoint: string;
+  errorTrace: string | null;
   id: string;
-  joinDate: Generated<Date>;
-  kkNumber: string;
-  ktpNumber: string;
-  leaveQuota: number;
-  name: string;
-  payroll: number;
-  phone: string;
-  taxStatus: "K1" | "K2" | "S0";
   updatedAt: Generated<Date>;
 }
 
 export interface User {
   createdAt: Generated<Date>;
+  createdBy: string | null;
   deletedAt: Date | null;
+  deletedBy: string | null;
   email: string;
   id: string;
+  name: string;
   password: string;
   updatedAt: Generated<Date>;
+  updatedBy: string | null;
   username: string;
+}
+
+export interface DB {
+  auditError: AuditError;
+  user: User;
 }

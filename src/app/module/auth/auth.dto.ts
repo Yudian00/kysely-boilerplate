@@ -11,6 +11,12 @@ export const authRegisterESchema = z.object({
     email: z.string().email(),
 })
 
+export const authChangePassword = z.object({
+    email: z.string().email(),
+    oldPassword: z.string().min(4),
+    newPassword: z.string().min(4)
+})
 
+export type IAuthChangePassword = z.infer<typeof authChangePassword>;
 export type IAuthLogin = z.infer<typeof authLoginSchema>;
 export type IAuthRegister = z.infer<typeof authRegisterESchema>;
